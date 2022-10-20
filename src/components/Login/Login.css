@@ -4,6 +4,7 @@
     margin: 20px auto;
     border: 1px solid #95a0a7;
     border-radius: 8px;
+    padding-left: 40px;
 }
 
 .form-title {
@@ -17,7 +18,7 @@
 
 .form-control {
     margin-bottom: 20px;
-    margin-left: 40px;
+
 }
 
 .form-control label {
@@ -43,7 +44,6 @@
     width: 415px;
     height: 55px;
     margin-top: 45px;
-    margin-left: 40px;
     background: rgba(255, 153, 0, 0.3);
     border-radius: 5px;
     font-weight: 400;
