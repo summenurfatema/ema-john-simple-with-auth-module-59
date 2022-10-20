@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import './Signup.css'
+
 
 const Signup = () => {
+
+    const [error, SetError] = useState(null)
 
     const handleSubmit = event => {
         event.preventDefault()
@@ -9,7 +13,14 @@ const Signup = () => {
         const email = form.email.value
         const password = form.password.value
         const confirm = form.confirm.value
-        console.log(email, password, confirm)
+        //console.log(email, password, confirm)
+
+        if (password.length < 6) {
+            SetError('Please enter at least 6 characters !!')
+        }
+        if (password !== confirm) {
+            SetError('Please enter correct password !!')
+        }
     }
 
     return (
@@ -27,6 +38,7 @@ const Signup = () => {
                 <div className='form-control'>
                     <label htmlFor='confirm'>Confirm Password</label>
                     <input type='password' name="confirm" />
+                    <p className='error'>{error}</p>
                 </div>
                 <input className='btn-submit' type='submit' value='Sign Up' />
                 <p>Already have an account ? <Link to='/login'>Login here</Link> </p>
