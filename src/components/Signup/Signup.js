@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../context/UserContext';
 import './Signup.css'
 
 
 const Signup = () => {
 
     const [error, SetError] = useState(null)
+    const { createUser } = useContext(AuthContext)
 
     const handleSubmit = event => {
         event.preventDefault()
@@ -23,7 +25,14 @@ const Signup = () => {
             SetError('Please enter correct password !!')
             return;
         }
+        createUser(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+            })
+            .catch(error => console.error(error))
     }
+
 
     return (
         <div className='form-container'>
