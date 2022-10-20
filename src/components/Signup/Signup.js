@@ -17,9 +17,11 @@ const Signup = () => {
 
         if (password.length < 6) {
             SetError('Please enter at least 6 characters !!')
+            return;
         }
         if (password !== confirm) {
             SetError('Please enter correct password !!')
+            return;
         }
     }
 
