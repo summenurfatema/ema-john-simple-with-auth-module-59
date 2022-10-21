@@ -19,18 +19,19 @@ const UserContext = ({ children }) => {
 
     //------------------sign in--------------//
     const signIn = (email, password) => {
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
 
     //------------------sign out---------------//
     const logOut = () => {
+        setLoading(true)
         return signOut(auth)
     }
     // -----------------subscribe--------------//
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
-            console.log(currentUser)
             setUser(currentUser)
             setLoading(false)
         })
