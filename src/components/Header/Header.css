@@ -16,13 +16,16 @@
 }
 
 .header a:hover {
-    color: orange;
+    color: rgb(3, 2, 2);
 }
 
 .btn-logout {
     margin-left: 10px;
 }
 
-.span {
+.logout-btn {
     color: white;
+    background-color: #1C2B35;
+    margin-left: 10px;
+    padding: 10px;
 }
